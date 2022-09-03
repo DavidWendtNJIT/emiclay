@@ -37,14 +37,16 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
+  transition: all 1.5s ease;
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
   display: flex;
   align-items: center;
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
-  background-color: #${props => props.bg};
+  background-color: #${(props) => props.bg};
 `;
 
 const ImgContainer = styled.div`
@@ -62,44 +64,47 @@ const InfoContainer = styled.div`
 
 const Title = styled.h1`
   font-size: 70px;
-`
+`;
 const Desc = styled.p`
   margin: 50px 0px;
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
-`
+`;
 const Button = styled.button`
   padding: 10px;
   font-size: 20px;
   background-color: transparent;
-`
-
+`;
 
 const Slider = () => {
-  const [slideIndex, setSlideIndex] = useState(0)
+  const [slideIndex, setSlideIndex] = useState(0);
 
   const handleClick = (direction) => {
-
-  }
+    if (direction === "left") {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+    }
+  };
 
   return (
     <Container>
       <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowBackIosNewOutlined />
       </Arrow>
-      <Wrapper>
-        {SliderItems.map((item)=>(
+      <Wrapper slideIndex={slideIndex}>
+        {SliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
-          <ImgContainer>
-            <Image src={item.img} />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>{item.title}</Title>
-            <Desc>{item.desc}</Desc>
-            <Button>SHOP NOW</Button>
-          </InfoContainer>
-        </Slide>
+            <ImgContainer>
+              <Image src={item.img} />
+            </ImgContainer>
+            <InfoContainer>
+              <Title>{item.title}</Title>
+              <Desc>{item.desc}</Desc>
+              <Button>SHOP NOW</Button>
+            </InfoContainer>
+          </Slide>
         ))}
       </Wrapper>
       <Arrow direction="right" onClick={() => handleClick("right")}>
