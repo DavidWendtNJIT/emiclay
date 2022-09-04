@@ -74,7 +74,8 @@ const Desc = styled.p`
 const Button = styled.button`
   padding: 10px;
   font-size: 20px;
-  background-color: transparent;
+  background-color: #ffffff30;
+  cursor: pointer;
 `;
 
 const Slider = () => {
