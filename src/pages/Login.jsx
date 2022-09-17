@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background:
-    url("https://img.freepik.com/premium-photo/green-leaf-polymer-clay-press-forms-cutter-beige-background-copy-space_143127-1629.jpg?w=2000")
-      center no-repeat;
+  background: url("https://img.freepik.com/premium-photo/green-leaf-polymer-clay-press-forms-cutter-beige-background-copy-space_143127-1629.jpg?w=2000")
+    center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -16,6 +16,8 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: white;
+  /* border-radius: 5%; */
+  ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
@@ -37,11 +39,12 @@ const Input = styled.input`
 
 
 const Button = styled.button`
-  width: 40%;
+  flex: 1;
+  /* width: 40%; */
   margin-bottom: 10px;
   border: 1px solid #db9b12;
   padding: 15px 20px;
-  background-color: white;
+  background-color: #f5dfb0;
   color: black;
   cursor: pointer;
   font-weight: 500;
@@ -63,9 +66,9 @@ const Register = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>SIGN IN</Title>
+        <Title>LOG IN</Title>
         <Form>
-          <Input placeholder="Username" />
+          <Input placeholder="Email" />
           <Input placeholder="Password" />
           <Button>SIGN IN</Button>
           <Link>Forgot Password?</Link>

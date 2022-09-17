@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
@@ -15,6 +16,8 @@ const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
   background-color: white;
+  /* border-radius: 5%; */
+  ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
@@ -40,10 +43,11 @@ const Agreement = styled.span`
 `;
 
 const Button = styled.button`
-  width: 40%;
+  flex: 1;
+  /* width: 40%; */
   border: 1px solid #db9b12;
   padding: 15px 20px;
-  background-color: white;
+  background-color: #f5dfb0;
   color: black;
   cursor: pointer;
   font-weight: 500;
@@ -55,7 +59,7 @@ const Button = styled.button`
   }
 `;
 
-const Register = () => {
+const SignUp = () => {
   return (
     <Container>
       <Wrapper>
@@ -63,7 +67,6 @@ const Register = () => {
         <Form>
           <Input placeholder="First Name" />
           <Input placeholder="Last Name" />
-          <Input placeholder="Username" />
           <Input placeholder="Email" />
           <Input placeholder="Password" />
           <Input placeholder="Confirm Password" />
@@ -78,4 +81,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SignUp;

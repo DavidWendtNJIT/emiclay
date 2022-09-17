@@ -65,7 +65,7 @@ const InfoContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 70px;
+  font-size: 10rem;
 `;
 const Desc = styled.p`
   margin: 50px 0px;
@@ -76,7 +76,7 @@ const Desc = styled.p`
 const Button = styled.button`
   padding: 10px;
   font-size: 20px;
-  background-color: #ffffff30;
+  /* background-color: #ffffff30; */
   cursor: pointer;
 `;
 

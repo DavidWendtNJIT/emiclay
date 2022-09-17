@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
 
@@ -10,18 +11,21 @@ const Container = styled.div`
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
-`
+  ${mobile({ padding: "10px", flexDirection: "column" })}
+`;
 const ImgContainer = styled.div`
   flex: 1;
 `;
 const Image = styled.img`
   width: 100%;
   height: 90vh;
-  object-fit: cover;;
+  object-fit: cover;
+  ${mobile({ height: "40vh" })}
 `;
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
+  ${mobile({ padding: "10px" })}
 `;
 const Title = styled.h1`
   font-weight: 400;
@@ -34,7 +38,7 @@ const Price = styled.span`
   font-size: 32px;
 `;
 const AddContainer = styled.div`
-  margin: 20px 0px;
+  margin: 40px 0px;
   width: 30%;
   display: flex;
   align-items: center;
@@ -57,16 +61,18 @@ const Amount = styled.span`
 `;
 const Button = styled.button`
   padding: 15px;
-  border: 1px solid #db9b12;
-  background-color: white;
-  color: black;
+  border: 1px solid white;
+  background-color: #db9b12;
+  color: white;
   cursor: pointer;
   font-weight: 500;
+  margin-left: 30px;
+  /* ${mobile({ width: "75px" })} */
 
   &:hover {
-    border: 1px solid white;
-    background-color: #db9b12;
-    color: white;
+    border: 1px solid #db9b12;
+    background-color: white;
+    color: #db9b12;
   }
 `;
 

@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #f5dfb0;
   ${mobile({ padding: "10px 0px" })};
 `;
 
@@ -33,6 +34,7 @@ const SearchContainer = styled.div`
   border: 0.5px solid lightgray;
   display: flex;
   align-items: center;
+  background-color: white;
   margin-left: 20px;
   padding: 5px;
 `;

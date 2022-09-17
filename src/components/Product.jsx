@@ -1,5 +1,6 @@
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from "@mui/icons-material"
 import styled from "styled-components"
+import { mobile } from "../responsive";
 
 const Info = styled.div`
   opacity: 0;
@@ -27,8 +28,10 @@ const Container = styled.div`
   background-color: #f5dfb0;
   position: relative;
 
-  &:hover ${Info}{
+  &:hover ${Info} {
     opacity: 1;
+
+    ${mobile({ width: "50%" })}
   }
 `;
 
@@ -42,7 +45,7 @@ const Circle = styled.div`
 const Image = styled.img`
   height: 75%;
   z-index: 2;
-`
+`;
 
 const Icon = styled.div`
   width: 40px;

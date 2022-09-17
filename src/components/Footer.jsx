@@ -1,8 +1,12 @@
 import { Email, Facebook, Instagram, Pinterest, Place, Twitter } from "@mui/icons-material";
 import styled from "styled-components";
+import { mobile } from "../responsive";
+import FooterSignature from "./FooterSignature";
 
 const Container = styled.div`
   display: flex;
+  background-color: #f5dfb0;
+  ${mobile({ flexDirection: "column" })}
 `;
 const Left = styled.div`
   flex: 1;
@@ -36,6 +40,7 @@ const SocialIcon = styled.h1`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ display: "none" })}
 `;
 
 const Title = styled.h3`
@@ -63,12 +68,10 @@ const ContactItem = styled.div`
   display: flex;
   align-items: center;
 `
-const Payment = styled.img`
-  
-`
 
 const Footer = () => {
   return (
+    <>
     <Container>
       <Left>
         <Logo>Emiclay</Logo>
@@ -109,9 +112,10 @@ const Footer = () => {
         <ContactItem>
           <Email style={{ marginRight: "10px" }} /> email@email.com
         </ContactItem>
-        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
       </Right>
     </Container>
+    <FooterSignature/>
+    </>
   );
 };
 
