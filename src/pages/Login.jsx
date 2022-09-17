@@ -67,7 +67,7 @@ const Register = () => {
         <Form>
           <Input placeholder="Username" />
           <Input placeholder="Password" />
-          <Button>LOG IN</Button>
+          <Button>SIGN IN</Button>
           <Link>Forgot Password?</Link>
           <Link>Create a New Account</Link>
         </Form>
